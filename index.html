@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="The AXIA delivery game" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@500&display=swap" rel="stylesheet" />
+
+    <meta name="theme-color" content="#000000" />
+    <title>The Great Christmas Delivery</title>
+  </head>
+  <body>
+    <img src="images/corner.png" id="corner1" alt="corner" />
+    <img src="images/corner.png" id="corner2" alt="corner" />
+    <p class="bigTitle">
+      The Great 
+
+      <span id="axiaLogo"><img id="hat" src="images/hat.png" />AXIA</span>
+      Christmas Delivery
+    </p>
+
+    <div id="game">
+      <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">
+          ❅
+        </div>
+        <div class="snowflake">
+          ❆
+        </div>
+        <div class="snowflake">
+          ❅
+        </div>
+        <div class="snowflake">
+          ❆
+        </div>
+        <div class="snowflake">
+          ❅
+        </div>
+        <div class="snowflake">
+          ❆
+        </div>
+        <div class="snowflake">
+          ❅
+        </div>
+        <div class="snowflake">
+          ❆
+        </div>
+        <div class="snowflake">
+          ❅
+        </div>
+        <div class="snowflake">
+          ❆
+        </div>
+        <div class="snowflake">
+          ❅
+        </div>
+        <div class="snowflake">
+          ❆
+        </div>
+      </div>
+
+      <p class="scoreText">Score: <span id="score">0</span></p>
+      <div id="smoke"></div>
+
+      <div id="character">
+        <img id="van" src="images/vanNwAxia.png" />
+        <img class="wheels" id="wheel1" src="images/wheel.png" />
+        <img class="wheels" id="wheel2" src="images/wheel.png" />
+
+        <div id="fumes">
+          <div class="fumes1"></div>
+          <div class="fumes2"></div>
+          <div class="fumes3"></div>
+        </div>
+      </div>
+
+      <div id="background"></div>
+
+      <div class="endGameDiv">
+        <p id="gameOverTitle">GAME OVER</p>
+        <form id="form">
+          <div id="inputDiv">
+            <input type="text" id="name" placeholder="NAME" required />
+            <button id="submitBtn" class="mainBtn" type="submit">Submit Your Score</button>
+          </div>
+        </form>
+
+        <div id="startDiv">
+          <p id="underText">Use <img src="images/mouse.png" alt="mouse" id="mouse" /> to jump. Avoid the obstacles.</p>
+          <button id="startBtn" class="mainBtn">Start</button>
+        </div>
+        <button id="playAgainBtn" class="mainBtn">Try Again</button>
+      </div>
+
+      <img src="images/santa.png" id="santa" alt="santa" />
+    </div>
+
+    <div id="scoresDiv">
+      <p class="smallTitle">Top 5 Scores</p>
+      <ul id="topScores"></ul>
+    </div>
+
+    <!-- <p id="madeBy">Made with &#10084;&#65039; by Bojo.</p> -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: 'AIzaSyB4WDbISsEjPtxZ4ShZ9EvcmJyDrH7Di64',
+        authDomain: 'game-score-8aae1.firebaseapp.com',
+        databaseURL: 'https://game-score-8aae1.firebaseio.com',
+        projectId: 'game-score-8aae1',
+        storageBucket: 'game-score-8aae1.appspot.com',
+        messagingSenderId: '903085174116',
+        appId: '1:903085174116:web:178622d0700d00601a5e71'
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

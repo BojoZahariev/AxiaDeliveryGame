@@ -1,0 +1,1041 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #bfd7ea;
+  color: #2e4057;
+  font-family: 'Grandstander', cursive;
+}
+
+#corner1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  opacity: 0.8;
+}
+
+#corner2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 150px;
+  transform: scaleY(-1) scaleX(-1);
+  opacity: 0.8;
+}
+
+.bigTitle {
+  font-size: 50px;
+  text-align: center;
+  padding: 40px;
+  color: #2e4057;
+  margin-bottom: 50px;
+  font-family: 'Mountains of Christmas', cursive;
+}
+
+.logo {
+  width: 200px;
+  vertical-align: text-bottom;
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+}
+
+#axiaLogo {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 65px;
+  position: relative;
+  padding-left: 10px;
+}
+
+#hat {
+  position: absolute;
+  width: 60px;
+  left: -10px;
+}
+
+#game {
+  width: 800px;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+  background-color: #bfd7ea;
+  margin: 20px auto;
+}
+
+#background {
+  background: url('images/back.png') repeat-x;
+  height: 352px;
+  width: 4779px;
+  background-position: bottom;
+  opacity: 0.6;
+}
+
+.sliding {
+  animation: slide 60s linear infinite;
+  -webkit-animation: slide 60s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-1593px, 0, 0);
+  }
+}
+
+@-webkit-keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-1593px, 0, 0);
+  }
+}
+
+#character {
+  width: 150px;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  z-index: 999;
+
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+}
+
+.animate {
+  animation: jump 1s linear;
+  -webkit-animation: jump 1s linear;
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  30% {
+    bottom: 60px;
+    transform: rotate(-20deg);
+  }
+  70% {
+    bottom: 60px;
+  }
+
+  90% {
+    bottom: 30px;
+    transform: rotate(30deg);
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+@-webkit-keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  30% {
+    bottom: 60px;
+    transform: rotate(-20deg);
+  }
+  70% {
+    bottom: 60px;
+  }
+
+  90% {
+    bottom: 30px;
+    transform: rotate(20deg);
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+#van {
+  width: 100%;
+  z-index: 9;
+  transform: translateY(3px);
+}
+
+#fumes {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  position: absolute;
+  top: 44px;
+  left: -20px;
+  border-radius: 50%;
+  display: none;
+
+  animation: exhaust 1.2s infinite;
+  -webkit-animation: exhaust 1.2s infinite;
+}
+
+@-webkit-keyframes exhaust {
+  0% {
+    transform: translateX(0px) scale(0.1);
+  }
+
+  100% {
+    transform: translateX(-120px) scale(1) rotate(90deg);
+  }
+}
+
+@keyframes exhaust {
+  0% {
+    transform: translateX(0px) scale(0.1);
+  }
+  100% {
+    transform: translateX(-120px) scale(1) rotate(90deg);
+  }
+}
+
+.fumes1 {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  margin-top: 10px;
+  background-color: #fff;
+  border-radius: 100%;
+  margin-left: -10px;
+}
+
+.fumes2 {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 80%;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.fumes3 {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 100%;
+  margin-left: -1px;
+}
+
+.vanCrashed {
+  animation: vanDrop 0.5s forwards linear;
+  -webkit-animation: vanDrop 0.5s forwards linear;
+}
+
+@keyframes vanDrop {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+@-webkit-keyframes vanDrop {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+.animatedVan {
+  animation: carMove 0.3s infinite linear;
+  -webkit-animation: carMove 0.3s infinite linear;
+}
+
+@keyframes carMove {
+  0% {
+    transform: translateY(3px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+
+  100% {
+    transform: translateY(3px);
+  }
+}
+
+@-webkit-keyframes carMove {
+  0% {
+    transform: translateY(3px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+
+  100% {
+    transform: translateY(3px);
+  }
+}
+
+.wheels {
+  width: 14%;
+  position: absolute;
+  bottom: 0;
+}
+
+#wheel1 {
+  left: 14.5%;
+}
+
+#wheel2 {
+  left: 80.6%;
+}
+
+.animatedWheel1 {
+  animation: leftWheelFly 1.5s forwards linear;
+  -webkit-animation: leftWheelFly 1.5s forwards linear;
+}
+
+.animatedWheel2 {
+  animation: rightWheelFly 1.5s forwards linear;
+  -webkit-animation: rightWheelFly 1.5s forwards linear;
+}
+
+@keyframes leftWheelFly {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 50px;
+    left: 2%;
+  }
+
+  100% {
+    bottom: 0px;
+    left: -10%;
+  }
+}
+
+@-webkit-keyframes leftWheelFly {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 50px;
+    left: 2%;
+  }
+
+  100% {
+    bottom: 0px;
+    left: -10%;
+  }
+}
+
+@keyframes rightWheelFly {
+  0% {
+    bottom: 0;
+  }
+  30% {
+    bottom: 60px;
+    left: 110%;
+  }
+
+  50% {
+    bottom: 0px;
+    left: 120%;
+  }
+
+  75% {
+    bottom: 10px;
+    left: 130%;
+  }
+
+  100% {
+    bottom: 0px;
+    left: 140%;
+  }
+}
+
+@-webkit-keyframes rightWheelFly {
+  0% {
+    bottom: 0;
+  }
+  30% {
+    bottom: 60px;
+    left: 110%;
+  }
+
+  50% {
+    bottom: 0px;
+    left: 120%;
+  }
+
+  75% {
+    bottom: 10px;
+    left: 130%;
+  }
+
+  100% {
+    bottom: 0px;
+    left: 140%;
+  }
+}
+
+.block {
+  display: block;
+  width: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 800px;
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+}
+
+.animateBlock {
+  animation: block 4s forwards linear;
+  -webkit-animation: block 4s forwards linear;
+}
+
+@keyframes block {
+  0% {
+    left: 800px;
+  }
+  100% {
+    left: -20px;
+  }
+}
+
+@-webkit-keyframes block {
+  0% {
+    left: 800px;
+  }
+  100% {
+    left: -20px;
+  }
+}
+
+#smoke {
+  width: 70px;
+  height: 100px;
+  background: none;
+  position: absolute;
+  left: 160px;
+  bottom: 15px;
+  display: none;
+  z-index: 99;
+}
+
+#smoke:after {
+  content: '';
+  width: 120px;
+  height: 120px;
+  background: none;
+  position: absolute;
+  background-image: -webkit-radial-gradient(42% 48%, ellipse, #00000033, transparent 25%), -webkit-radial-gradient(35% 70%, ellipse, #00000033, transparent 15%),
+    -webkit-radial-gradient(42% 61%, ellipse, #00000033, transparent 10%);
+  -webkit-animation: smoke 3s infinite;
+  animation: smoke 3s infinite;
+  transform: rotate(18deg);
+  opacity: 0.5;
+}
+
+@keyframes smoke {
+  0% {
+    background-position: 0 0;
+    opacity: 0.5;
+  }
+  15%,
+  85% {
+    opacity: 1;
+  }
+  100% {
+    background-position: -20px -25px, -5px -25px, 0px -25px, 0px -25px;
+    opacity: 0.5;
+  }
+}
+
+@-webkit-keyframes smoke {
+  0% {
+    background-position: 0 0;
+    opacity: 0.5;
+  }
+  15%,
+  85% {
+    opacity: 1;
+  }
+  100% {
+    background-position: -20px -25px, -5px -25px, 0px -25px, 0px -25px;
+    opacity: 0.5;
+  }
+}
+
+.scoreText {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  z-index: 99;
+  color: #2e4057;
+  font-size: 25px;
+}
+
+#score {
+  font-size: 30px;
+  color: #fc9f5b;
+  text-shadow: 2px 1px 2px #222;
+}
+
+.endGameDiv {
+  top: 0;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  z-index: 999;
+}
+
+.btnDiv {
+  padding: 20px;
+  text-align: center;
+}
+
+.mainBtn {
+  border: 2px solid #fc9f5b;
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: #124e78;
+  color: #fc9f5b;
+  font-size: 25px;
+  background-size: 200% auto;
+  background-image: linear-gradient(to right, #124e78 0%, #78b9e7 50%, #124e78 100%);
+  transition: 1.5s;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  margin: 10px auto;
+  z-index: 99;
+  text-shadow: 2px 1px 2px #222;
+  font-family: 'Grandstander', cursive;
+}
+
+#startDiv {
+  margin: 100px auto;
+}
+
+#startBtn {
+  margin: 10px auto;
+}
+
+#underText {
+  text-align: center;
+  font-size: 20px;
+  user-select: none;
+  font-family: 'Grandstander', cursive;
+}
+
+#mouse {
+  width: 40px;
+  opacity: 0.7;
+  vertical-align: middle;
+}
+
+.mainBtn:active {
+  transform: scale(0.9);
+}
+
+.mainBtn:hover {
+  background-position: right center;
+}
+
+#playAgainBtn {
+  display: none;
+}
+
+#gameOverTitle {
+  display: none;
+  padding: 10px;
+  font-size: 50px;
+  transform: scaleX(0.1);
+  animation: expand 2s linear forwards;
+  -webkit-animation: expand 2s linear forwards;
+  color: #ed254e;
+  text-shadow: 2px 1px 2px #222;
+}
+
+@keyframes expand {
+  0% {
+    transform: scaleX(0.1);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@-webkit-keyframes expand {
+  0% {
+    transform: scaleX(0.1);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+#form {
+  text-align: center;
+  position: relative;
+  display: none;
+  padding: 10px;
+}
+
+#inputDiv {
+  position: relative;
+  width: 250px;
+  margin: auto;
+}
+
+input {
+  text-transform: uppercase;
+  width: 240px;
+  height: 50px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 3px 20px;
+  margin: 0px 10px;
+  box-shadow: inset 0.2rem 0.2rem 0.5rem #86aac7, inset -0.2rem -0.2rem 0.5rem #dce3e9;
+  background: #bfd7ea;
+  color: #1c3144;
+  caret-color: #1c3144;
+  border: 2px solid #fc9f5b;
+}
+
+#submitBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: auto;
+  width: 250px;
+  height: 50px;
+  padding: 3px;
+  border-radius: 15px;
+  transition: 1.5s ease-out;
+  z-index: 99;
+  font-size: 18px;
+}
+
+#submitBtn:active {
+  transform: scale(1);
+}
+
+label {
+  position: absolute;
+  top: 0;
+}
+
+#santa {
+  position: absolute;
+  top: 100px;
+  left: -300;
+  display: none;
+}
+
+.santaAnimated {
+  animation: traverse 4s linear forwards;
+  -webkit-animation: traverse 4s linear forwards;
+}
+
+@keyframes traverse {
+  0% {
+    top: 100px;
+    left: -300px;
+  }
+
+  100% {
+    top: 10px;
+    left: 900px;
+  }
+}
+
+@-webkit-keyframes traverse {
+  0% {
+    top: 100px;
+    left: -300px;
+  }
+
+  100% {
+    top: 10px;
+    left: 900px;
+  }
+}
+
+.smallTitle {
+  text-align: center;
+  border-bottom: 1px solid #ed254e;
+  width: 300px;
+  font-size: 25px;
+  margin: auto;
+  padding: 5px;
+  color: #ed254e;
+  text-shadow: 2px 1px 2px #222;
+}
+
+#topScores {
+  max-width: 250px;
+  margin: 10px auto;
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+}
+
+#topScores > li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  padding: 5px 2px;
+  position: relative;
+}
+
+.medals {
+  position: absolute;
+  left: -20px;
+  top: 0px;
+  width: 20px;
+}
+
+/* customizable snowflake styling */
+
+.snowflake {
+  color: #fff;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 0 5px #000;
+  position: absolute;
+  top: -10%;
+  z-index: 9999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+  -webkit-animation-duration: 7s, 3s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+  animation-name: snowflakes-fall, snowflakes-shake;
+  animation-duration: 7s, 3s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-play-state: running, running;
+}
+
+@-webkit-keyframes snowflakes-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@-webkit-keyframes snowflakes-shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(80px);
+    transform: translateX(80px);
+  }
+}
+
+@keyframes snowflakes-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes snowflakes-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(80px);
+  }
+}
+
+.snowflake:nth-of-type(0) {
+  left: 1%;
+  -webkit-animation-delay: 0s, 0s;
+  animation-delay: 0s, 0s;
+}
+
+.snowflake:nth-of-type(1) {
+  left: 10%;
+  -webkit-animation-delay: 1s, 1s;
+  animation-delay: 1s, 1s;
+}
+
+.snowflake:nth-of-type(2) {
+  left: 20%;
+  -webkit-animation-delay: 6s, 0.5s;
+  animation-delay: 6s, 0.5s;
+}
+
+.snowflake:nth-of-type(3) {
+  left: 30%;
+  -webkit-animation-delay: 4s, 2s;
+  animation-delay: 4s, 2s;
+}
+
+.snowflake:nth-of-type(4) {
+  left: 40%;
+  -webkit-animation-delay: 2s, 2s;
+  animation-delay: 2s, 2s;
+}
+
+.snowflake:nth-of-type(5) {
+  left: 50%;
+  -webkit-animation-delay: 8s, 3s;
+  animation-delay: 8s, 3s;
+}
+
+.snowflake:nth-of-type(6) {
+  left: 60%;
+  -webkit-animation-delay: 6s, 2s;
+  animation-delay: 6s, 2s;
+}
+
+.snowflake:nth-of-type(7) {
+  left: 70%;
+  -webkit-animation-delay: 2.5s, 1s;
+  animation-delay: 2.5s, 1s;
+}
+
+.snowflake:nth-of-type(8) {
+  left: 80%;
+  -webkit-animation-delay: 1s, 0s;
+  animation-delay: 1s, 0s;
+}
+
+.snowflake:nth-of-type(9) {
+  left: 90%;
+  -webkit-animation-delay: 3s, 1.5s;
+  animation-delay: 3s, 1.5s;
+}
+
+.snowflake:nth-of-type(10) {
+  left: 25%;
+  -webkit-animation-delay: 2s, 0s;
+  animation-delay: 2s, 0s;
+}
+
+.snowflake:nth-of-type(11) {
+  left: 65%;
+  -webkit-animation-delay: 4s, 2.5s;
+  animation-delay: 4s, 2.5s;
+}
+
+#madeBy {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+/*MEDIA*/
+
+@media only screen and (max-width: 768px) {
+  #corner1 {
+    display: none;
+  }
+
+  #corner2 {
+    display: none;
+  }
+
+  .bigTitle {
+    font-size: 35px;
+    padding: 5px;
+    margin-bottom: 30px;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  #game {
+    width: 100%;
+    height: 250px;
+    margin: 20px auto;
+  }
+
+  #background {
+    height: 252px;
+  }
+
+  .sliding {
+    animation: slide 50s linear infinite;
+    -webkit-animation: slide 50s linear infinite;
+  }
+
+  #character {
+    width: 100px;
+  }
+
+  .animate {
+    animation: jump 0.8s linear;
+    -webkit-animation: jump 0.8s linear;
+  }
+
+  @keyframes jump {
+    0% {
+      bottom: 0;
+    }
+    30% {
+      bottom: 40px;
+      transform: rotate(-20deg);
+    }
+    70% {
+      bottom: 40px;
+    }
+
+    90% {
+      bottom: 20px;
+      transform: rotate(30deg);
+    }
+    100% {
+      bottom: 0;
+    }
+  }
+
+  @-webkit-keyframes jump {
+    0% {
+      bottom: 0;
+    }
+    30% {
+      bottom: 40px;
+      transform: rotate(-20deg);
+    }
+    70% {
+      bottom: 40px;
+    }
+
+    90% {
+      bottom: 20px;
+      transform: rotate(30deg);
+    }
+    100% {
+      bottom: 0;
+    }
+  }
+
+  .block {
+    width: 30px;
+  }
+
+  #smoke {
+    width: 50px;
+    height: 80px;
+    left: 125px;
+    bottom: 0px;
+  }
+
+  #smoke:after {
+    width: 80px;
+    height: 80px;
+  }
+
+  #fumes {
+    width: 30px;
+    height: 30px;
+    top: 30px;
+  }
+
+  .fumes1 {
+    width: 20px;
+    height: 20px;
+  }
+
+  .fumes2 {
+    width: 20px;
+    height: 20px;
+  }
+
+  .fumes3 {
+    width: 10px;
+    height: 10px;
+  }
+
+  .scoreText {
+    padding: 2px;
+    font-size: 18px;
+  }
+
+  #score {
+    font-size: 20px;
+  }
+
+  #startDiv {
+    margin: 50px auto;
+  }
+
+  #underText {
+    font-size: 18px;
+  }
+
+  #mouse {
+    width: 30px;
+  }
+
+  #gameOverTitle {
+    padding: 5px;
+    font-size: 40px;
+  }
+
+  .snowflake {
+    font-size: 10px;
+  }
+
+  .smallTitle {
+    font-size: 20px;
+    text-shadow: 1px 1px 1px #222;
+  }
+
+  #topScores {
+    margin: 5px auto;
+  }
+
+  #topScores > li {
+    font-size: 13px;
+    padding: 2px;
+  }
+
+  .medals {
+    width: 15px;
+  }
+
+  #madeBy {
+    font-size: 12px;
+  }
+}
